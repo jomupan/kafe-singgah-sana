@@ -6,6 +6,7 @@ export type MenuItem = {
   description: string | null;
   image_url: string | null;
   available: boolean;
+  sort?: number;
 };
 
 export type Reservation = {
@@ -18,6 +19,8 @@ export type Reservation = {
   note: string | null;
   status: "pending" | "confirmed" | "cancelled";
   created_at: string;
+  preorder_total: number | null;
+  reservation_items: { qty: number; price: number; menu_items: { name: string } | null }[];
 };
 
 export type OrderStatus = "new" | "preparing" | "served" | "cancelled";
