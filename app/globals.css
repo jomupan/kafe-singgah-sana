@@ -3,9 +3,43 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+
+  /* Kampung colours: ise as bg-kayu, text-kertas, bg-daun, text-bata, etc. */
+  --color-kayu: #3b2616;
+  --color-kertas: #f5ead6;
+  --color-daun: #6b7d4a;
+  --color-bata: #b5562c;
 }
 
 body {
-  background: #fffbeb;
-  color: #292524;
+  background: #fbf0e3;
+  color: #3b2616;
+}
+
+/* Blurred photo behind the whole page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -30px;
+  z-index: -2;
+  background: url("/bg.jpeg") center / cover no-repeat;
+  filter: blur(6px);
+}
+
+/* Soft cream layer on top so text stays readable */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(245, 234, 214, 0.6);
+}
+
+/* Wooden board look for the menu */
+.papan {
+  background-color: #3b2616;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.025) 0 2px, transparent 2px 14px),
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.12) 0 1px, transparent 1px 38px);
 }
