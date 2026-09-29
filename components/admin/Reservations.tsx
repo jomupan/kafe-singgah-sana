@@ -63,7 +63,7 @@ export default function Reservations() {
         " telah disahkan.";
       if (r.reservation_items.length > 0) {
         const food = r.reservation_items.map((it) => it.qty + " x " + (it.menu_items?.name ?? "Item")).join(", ");
-        msg += " Pra-tempah makanan: " + food + " (Jumlah " + rm(r.preorder_total ?? 0) + ", bayar di kaunter).";
+        msg += " Order makanan: " + food + " (Jumlah " + rm(r.preorder_total ?? 0) + ", bayar di kaunter).";
       }
       msg += " Jumpa nanti!";
     }
@@ -130,7 +130,7 @@ export default function Reservations() {
                 {r.reservation_items.length > 0 && (
                   <div className="mt-3 rounded-xl bg-amber-50 p-3 text-sm">
                     <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-amber-800">
-                      Pra-tempah makanan
+                      Order makanan
                     </p>
                     <ul className="space-y-0.5">
                       {r.reservation_items.map((it, i) => (

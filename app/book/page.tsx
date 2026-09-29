@@ -125,7 +125,7 @@ export default function BookPage() {
           </p>
           {mode === "pra" && count > 0 && (
             <div className="mt-6 rounded-xl bg-white/70 p-4 text-left text-sm">
-              <p className="mb-2 font-semibold">Pra-tempah makanan</p>
+              <p className="mb-2 font-semibold">Order makanan</p>
               <ul className="space-y-1">
                 {lines.map((l) => (
                   <li key={l.item.id} className="flex justify-between gap-3">
@@ -253,7 +253,7 @@ export default function BookPage() {
               <div className="grid grid-cols-2 gap-2">
                 {[
                   { key: "kedai" as const, title: "Order di kedai", desc: "Pilih makanan bila sampai" },
-                  { key: "pra" as const, title: "Pra-tempah sekarang", desc: "Makanan siap bila anda sampai" },
+                  { key: "pra" as const, title: "Order makanan sekarang", desc: "Makanan siap bila anda sampai" },
                 ].map((opt) => (
                   <button
                     type="button"
@@ -341,7 +341,7 @@ export default function BookPage() {
                         ))}
                       </ul>
                       <p className="mt-2 flex justify-between border-t border-kertas/20 pt-2 font-semibold">
-                        <span>Jumlah pra-tempah</span>
+                        <span>Jumlah order</span>
                         <span className="font-mono">{rm(total)}</span>
                       </p>
                     </div>
